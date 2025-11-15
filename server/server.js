@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'https://virtualduniya.com', 'http://virtualduniya.com'], // Allow frontend from different ports
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'https://virtualduniya.com', 'http://virtualduniya.com', 'https://production-shift-attendance-log.onrender.com'], // Allow frontend from different ports
   credentials: true, // Allow cookies and authorization headers
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
