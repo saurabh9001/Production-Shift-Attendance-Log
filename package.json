@@ -53,15 +53,16 @@
             "@types/node": "^20.10.0",
             "@types/react": "^18.3.9",
             "@types/react-dom": "^18.3.4",
-            "typescript": "^5.6.3",
             "@vitejs/plugin-react-swc": "^3.10.2",
+            "autoprefixer": "^10.4.16",
+            "tailwindcss": "^3.4.0",
+            "tailwindcss-animate": "^1.0.7",
+            "typescript": "^5.6.3",
             "vite": "6.3.5"
       },
-  "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "start:all": "cd \"/Users/home/Desktop/hackaton/Production Shift Attendance Log\" && npm run dev & (cd server && npm start)"
-}
-
-      
+      "scripts": {
+            "dev": "vite",
+            "build": "vite build",
+            "start:all": "cd \"/Users/home/Desktop/hackaton/Production Shift Attendance Log\" && npm run dev & (cd server && npm start)"
+      }
 }

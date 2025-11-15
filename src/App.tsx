@@ -172,19 +172,17 @@ export default function App() {
       if (response.success && response.data) {
         // Transform database format to frontend format
         const transformedRecords = response.data.map((record: any) => {
-          // Find the worker name from workers list
-          const worker = workers.find(w => w.id === record.worker_id.toString());
           return {
             id: record.id.toString(),
-            workerId: record.worker_id.toString(),
-            workerName: worker?.name || `Worker ${record.worker_id}`,
-            employeeId: worker?.employeeId || `EMP${record.worker_id}`,
+            workerId: record.worker_id?.toString() || record.employee_id,
+            workerName: record.employee_name,
+            employeeId: record.employee_id,
             date: record.date.split('T')[0], // Convert to YYYY-MM-DD
             shift: record.shift,
             status: record.status,
             checkIn: record.check_in || undefined,
             checkOut: record.check_out || undefined,
-            workingHours: record.working_hours ? parseFloat(record.working_hours) : undefined,
+            workingHours: record.hours_worked ? parseFloat(record.hours_worked) : undefined,
           };
         });
         setAttendanceRecords(transformedRecords);

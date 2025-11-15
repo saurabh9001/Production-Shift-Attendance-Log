@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 const corsOptions = {
-  origin: 'http://localhost:3000', // Allow only the frontend to access
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'https://virtualduniya.com', 'http://virtualduniya.com'], // Allow frontend from different ports
   credentials: true, // Allow cookies and authorization headers
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // MySQL Connection Pool
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'attendance_db',

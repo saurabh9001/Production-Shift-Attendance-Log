@@ -1,7 +1,5 @@
 -- Enhanced database schema with employees table
-DROP DATABASE IF EXISTS attendance_db;
-CREATE DATABASE attendance_db;
-USE attendance_db;
+-- Database: u382734432_attendance (already created in Hostinger)
 
 -- Create employees table
 CREATE TABLE IF NOT EXISTS employees (
